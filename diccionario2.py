@@ -35,6 +35,21 @@ def generar_diccionario_estudiantes():
         }
 
     return estudiantes
-dic={'nombre':generar_diccionario_estudiantes()}
-for i in dic:
-    print(dic[i])                       
+if __name__ == '__main__':
+    diccionario = generar_diccionario_estudiantes()
+    for llave,valor in diccionario.iteritems():
+        print llave,valor
+
+mensaje = 'El estudiante  {nombre} con la edad de: {edad}, que cursa el {anio} anio y que habita en la ciudad de {ciudad}'
+
+for nombre_estudiante, datos in diccionario.iteritems():
+    print mensaje.format(nombre=nombre_estudiante, edad=datos['edad'],anio=datos['anio'], ciudad = datos['ciudad'])
+
+mensaje = 'se mencionan los estudiantes {nombre} de la ciudad de {ciudad}'
+
+for nombre_estudiante, datos in diccionario.iteritems():
+    if datos['ciudad'] == 'Managua':
+        print mensaje.format(nombre=nombre_estudiante,ciudad=datos['ciudad'])
+
+
+
