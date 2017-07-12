@@ -60,8 +60,10 @@ class MiVentana(Gtk.Window):
 
 
 	def agregar_entrada(self):
+
                                                                                                                                                       		self.entrada = Gtk.Entry()
 		self.contenedor.attach(self.entrada,0,0,1,1)
+  		self.
 
 	def label(self):
 		etiqueta = Gtk.label()
